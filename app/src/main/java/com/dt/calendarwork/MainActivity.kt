@@ -34,11 +34,11 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun MainScreen() {
     val calendar = Calendar.getInstance()
-    calendar.set(Calendar.YEAR, 2010)
-    calendar.set(Calendar.MONTH, 6)
+    calendar.set(Calendar.YEAR, 2022)
+    calendar.set(Calendar.MONTH, 0)
     val calendarMax = Calendar.getInstance()
-    calendarMax.set(Calendar.YEAR, 2032)
-    calendarMax.set(Calendar.MONTH, 9)
+    calendarMax.set(Calendar.YEAR, 2023)
+    calendarMax.set(Calendar.MONTH, 0)
 
     val (open, setOpen) = remember {
         mutableStateOf(true)
@@ -52,7 +52,6 @@ fun MainScreen() {
                 maxDate = calendarMax.time,
                 locale = Locale("en"),
                 title = "Select Date",
-                monthViewType = MonthViewType.ONLY_NUMBER_ONE_COLUMN,
                 listener = object : SelectDateListener {
                     override fun onDateSelected(date: Date) {
                         Log.i("DENEME", date.toString())
